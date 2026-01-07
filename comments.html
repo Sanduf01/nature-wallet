@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments Form</title>
+    <link rel="stylesheet" href="MiniP.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <center><b class="Logo">NATURE WALLET</b></center>
+    <div class="home">
+        <h3>
+            <a href="MiniP.html">Home</a>
+        </h3>
+    </div>
+    <hr>
+    <div id="app">
+        <h1>Comments</h1>
+        <form @submit.prevent="submitForm">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" size="50%" v-model="formData.name"><br>
+            <label for="country">Country:</label><br>
+            <input type="text" id="country" size="50%" v-model="formData.country"><br>
+            <label for="email">E-Mail Address:</label><br>
+            <input type="text" id="email" size="50%"><br>
+            <label for="comm">Type Your Comment:</label><br>
+            <input type="text" id="comm" size="80%" v-model="formData.comment"><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="my">
+            <b><p v-if="submitted">All Comments:</p></b>
+            <ul v-if="submitted">
+                <li v-for="(value, key) in formData" :key="key">
+                    {{ key }}: {{ value }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="MiniP.js"></script>
+        <center>
+            <h2>Thank You!</h2>
+        </center>
+    </body>
+    <footer>
+        <center><b>&#169 A. P. S. S. Fernando - 523607238 - s23010373</b></center>
+        <center>EEI3346 - Mini Project</center>
+    </footer>
+
+</html>
